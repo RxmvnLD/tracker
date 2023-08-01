@@ -1,113 +1,135 @@
-import Image from 'next/image'
+"use client";
 
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { BsArrowRight } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    return (
+        <AnimatePresence>
+            <div className="relative flex flex-col w-screen min-h-screen overflow-hidden sm:min-h-screen font-inter bg-gradient-to-b from-gray-900 to-gray-600">
+                <main className="flex flex-col my-auto justify-center static w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] py-auto px-4 md:px-20 md:py-0">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.15,
+                            duration: 0.95,
+                            ease: [0.165, 0.84, 0.44, 1],
+                        }}
+                        className="row-start-2 text-lg font-black md:text-3xl"
+                    >
+                        TRVK3R
+                    </motion.h2>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.15,
+                            duration: 0.95,
+                            ease: [0.165, 0.84, 0.44, 1],
+                        }}
+                        className="font-extrabold text-5xl md:text-6xl my-0 font-inter leading-[1.2] tracking-[-2px] z-[100]"
+                    >
+                        Control total, <br />
+                        finanzas <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-violet-200 to-violet-500">
+                            simplificadas
+                        </span>
+                        <span className="text-transparent font-inter bg-clip-text bg-gradient-to-b from-violet-200 to-violet-500">
+                            .
+                        </span>
+                    </motion.h1>
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.15,
+                            duration: 0.95,
+                            ease: [0.165, 0.84, 0.44, 1],
+                        }}
+                        className="flex flex-row justify-center z-20 mx-0 mb-0 mt-8 md:mt-0 md:mb-[35px] max-w-2xl md:space-x-8"
+                    >
+                        <div className="w-1/2">
+                            <h2 className="flex items-center font-semibold text-[1em]">
+                                Dashboard
+                            </h2>
+                            <p className="text-[14px] leading-[20px] font-normal">
+                                Gestiona tus ingresos y gastos de forma fácil y
+                                rápida.
+                            </p>
+                        </div>
+                        <div className="w-1/2">
+                            <h2 className="flex items-center font-semibold text-[1em] text">
+                                Tu asistente
+                            </h2>
+                            <p className="text-[14px] leading-[20px]  font-normal">
+                                Actualiza en cualquier momento, desde cualquier
+                                dispositivo.
+                            </p>
+                        </div>
+                    </motion.div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+                    <div className="flex gap-[15px] mt-8 md:mt-0">
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                delay: 0.55,
+                                duration: 0.55,
+                                ease: [0.075, 0.82, 0.965, 1],
+                            }}
+                        >
+                            <Link
+                                href="/auth/signup"
+                                className="group rounded-full pl-[8px] min-w-[180px] pr-4 py-2 text-[13px] font-semibold transition-all flex items-center justify-center bg-gray-800 text-white hover:[linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), #0D2247] no-underline flex gap-x-2  active:scale-95 scale-100 duration-75"
+                                style={{
+                                    boxShadow:
+                                        "0px 1px 4px rgba(13, 34, 71, 0.17), inset 0px 0px 0px 1px bg-gray-800, inset 0px 0px 0px 2px rgba(255, 255, 255, 0.1)",
+                                }}
+                            >
+                                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-violet-400">
+                                    <FiMail />
+                                </span>
+                                Registrate
+                            </Link>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                delay: 0.65,
+                                duration: 0.55,
+                                ease: [0.075, 0.82, 0.965, 1],
+                            }}
+                        >
+                            {" "}
+                            <Link
+                                href="/auth/login"
+                                className="group rounded-full px-4 py-2 text-[13px] font-bold transition-all flex items-center gap-2 justify-center bg-gradient-to-r from-gray-100 to-gray-300 text-gray-900 no-underline active:scale-95 scale-100 duration-75 "
+                            >
+                                Ingresa{" "}
+                                <BsArrowRight className="font-black"></BsArrowRight>
+                            </Link>
+                        </motion.div>
+                    </div>
+                </main>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+                <motion.div
+                    initial={{ opacity: 0, y: -40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        delay: 0.15,
+                        duration: 0.55,
+                        ease: [0.075, 0.82, 0.965, 1],
+                    }}
+                    style={{
+                        clipPath:
+                            "polygon(60px 0, 100% 0,calc(100% + 225px) 100%, 650px 100%)",
+                    }}
+                    className="z-50 fixed top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-gradient-to-t from-violet-300 to-violet-700 shadow-2xl shadow-violet-500"
+                ></motion.div>
+            </div>
+        </AnimatePresence>
+    );
 }
